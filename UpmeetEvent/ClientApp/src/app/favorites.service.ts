@@ -14,7 +14,7 @@ export class FavoritesService {
   }
 
   PostFavorites(): any {
-    return this.http.post(this.baseUrl + `api/addFavorite`);
+    return this.http.post(this.baseUrl + `api/addFavorite`, {});
   }
 
   RemoveFavorites(id: string): any {
