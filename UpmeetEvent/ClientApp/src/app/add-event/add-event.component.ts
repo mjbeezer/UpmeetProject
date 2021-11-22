@@ -16,24 +16,21 @@ export class AddEventComponent {
 
   }
 
-  newEvents: Event[] = [];
-
   AddToEvents(form: NgForm): void {
+    let newEvent: Event = {
 
-    this.event_Service.DisplayAllEvents().subscribe((response: any) => {
-      let newEvent: Event = {
+      id: form.form.value.id,
+      title: form.form.value.title,
+      description: form.form.value.description,
+      category: form.form.value.category,
+      labels: form.form.value.labels,
+      start: form.form.value.start,
+      location: form.form.value.location
 
-        id: form.form.value.id,
-        title: form.form.value.title,
-        description: form.form.value.description,
-        category: form.form.value.category,
-        labels: form.form.value.labels,
-        start: form.form.value.start,
-        location: form.form.value.location
-
-      } = response;
-
-      this.newEvents.push(response);
+    }
+    
+    this.event_Service.PostEvent(newEvent).subscribe((response: any) => {
+      console.log(response);
     });
 
 

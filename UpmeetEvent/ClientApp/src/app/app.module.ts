@@ -13,6 +13,9 @@ import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { AddEventComponent } from './add-event/add-event.component';
+import { EventComponent } from './event/event.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { AllEventsComponent } from './all-events/all-events.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,11 @@ import { AddEventComponent } from './add-event/add-event.component';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    EventComponent,
+    FavoritesComponent,
+    AllEventsComponent,
+    AddEventComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -31,7 +38,9 @@ import { AddEventComponent } from './add-event/add-event.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-      { path: 'add', component: AddEventComponent}
+      { path: 'add', component: AddEventComponent },
+      { path: 'events', component: EventComponent },
+      { path: 'favorites', component: FavoritesComponent },
 
     ])
   ],

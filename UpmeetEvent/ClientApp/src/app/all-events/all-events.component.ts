@@ -1,6 +1,7 @@
 import { Component, Input, EventEmitter } from '@angular/core';
 import { AuthorizeService } from '../../api-authorization/authorize.service';
 import { EventsService } from '../events.service';
+import { Event } from "../Event";
 
 @Component({
     selector: 'app-all-events',
