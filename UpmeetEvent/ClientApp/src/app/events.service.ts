@@ -18,7 +18,7 @@ export class EventsService {
   }
 
   PostEvent(newEvent: Event  ): any {
-    return this.http.post(this.baseUrl + `api/addEvent?Event=${newEvent}`, {});
+    return this.http.post(this.baseUrl + `api/addEvent`, newEvent);
   }
 
 
