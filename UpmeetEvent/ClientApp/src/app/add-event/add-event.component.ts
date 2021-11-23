@@ -24,7 +24,7 @@ export class AddEventComponent {
       description: form.form.value.description,
       category: form.form.value.category,
       labels: form.form.value.labels,
-      start: form.form.value.start,
+      eventDate: form.form.value.eventDate,
       location: form.form.value.location
 
     }
@@ -32,12 +32,5 @@ export class AddEventComponent {
     this.event_Service.PostEvent(newEvent).subscribe((response: any) => {
       console.log(response);
     });
-
-
-
-
   }
-
-
-
 }

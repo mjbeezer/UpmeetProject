@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AuthorizeService } from '../../api-authorization/authorize.service';
 import { EventsService } from '../events.service';
 import { Event } from "../Event";
@@ -25,6 +25,7 @@ export class AllEventsComponent {
   }
 
   @Input() event: Event = {} as Event
+  @Output() removeFromFav = new EventEmitter<string>();
 
   AddFavorite(): void {
     this.event_Service.PostEvent(this.event).subscribe((response: any) => {

@@ -1,21 +1,21 @@
 ﻿/// <reference path="../../../../node_modules/@types/jasmine/index.d.ts" />
 import { TestBed, async, ComponentFixture, ComponentFixtureAutoDetect } from '@angular/core/testing';
 import { BrowserModule, By } from "@angular/platform-browser";
-import { EventComponent } from './event.component';
+import { EventDetailsComponent } from './event-details.component';
 
-let component: EventComponent;
-let fixture: ComponentFixture<EventComponent>;
+let component: EventDetailsComponent;
+let fixture: ComponentFixture<EventDetailsComponent>;
 
-describe('Event component', () => {
+describe('event-details component', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ EventComponent ],
+            declarations: [ EventDetailsComponent ],
             imports: [ BrowserModule ],
             providers: [
                 { provide: ComponentFixtureAutoDetect, useValue: true }
             ]
         });
-        fixture = TestBed.createComponent(EventComponent);
+        fixture = TestBed.createComponent(EventDetailsComponent);
         component = fixture.componentInstance;
     }));
 

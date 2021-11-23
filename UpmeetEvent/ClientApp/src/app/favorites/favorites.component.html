@@ -1,1 +1,1 @@
-﻿<div style="border: 1px solid red">Favorites Component</div>
+<app-favorites *ngFor="let E of resultEvent" [Event]="E" (removeFromFav)="removeFromFav($event)"></app-favorites>
