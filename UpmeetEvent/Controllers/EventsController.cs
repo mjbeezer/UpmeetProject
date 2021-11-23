@@ -11,7 +11,7 @@ using System.Security.Claims;
 
 namespace UpmeetEvent.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class EventsController : ControllerBase
@@ -116,8 +116,15 @@ namespace UpmeetEvent.Controllers
             //context.SaveChanges();
             return context.allEvents.ToList();
         }
+        
+        [HttpGet("allEvents/{id}")]
+        public Event getEventById(int id)
+        {
+            return context.allEvents.Find(id);
+        }
 
         //endpoint to add an event
+        [Authorize]
         [HttpPost("addEvent")]
         public Event addEvent(string title, string description, string category, string labels, DateTime eventdate, string location)
         {
@@ -127,12 +134,5 @@ namespace UpmeetEvent.Controllers
             this.context.SaveChanges();
             return newEvent;
         }
-
-        [HttpGet("allEvents/{id}")]
-        public Event getEventById(int id)
-        {
-            return context.allEvents.Find(id);
-        }
-
     }
 }

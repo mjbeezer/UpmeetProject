@@ -20,6 +20,7 @@ export class EventDetailsComponent implements OnInit {
     let result = "" + this.event.eventDate.substring(0, index);
     let time = this.event.eventDate.substring(index + 1);
     //console.log(time);
+    //add some code here to remove errors showing in console
     return result;
   }
 

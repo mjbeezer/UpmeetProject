@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { Favorites } from './Favorites';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +11,14 @@ export class FavoritesService {
   }
 
   GetAllFavorites(): any {
-    return this.http.get(this.baseUrl + `api/allFavorites`);
+    return this.http.get(this.baseUrl + `api/Favorites/allFavorites`);
   }
 
-  PostFavorites(): any {
-    return this.http.post(this.baseUrl + `api/addFavorite`, {});
+  PostFavorites(F: Favorites): any {
+    return this.http.post(this.baseUrl + `api/Favorites/addFavorite`, {});
   }
 
-  RemoveFavorites(id: string): any {
-    return this.http.delete(this.baseUrl + `api/deleteFavorite?id=${id}`);
+  RemoveFavorites(id: number): any {
+    return this.http.delete(this.baseUrl + `api/Favorites/deleteFavorite?id=${id}`);
   }
 }

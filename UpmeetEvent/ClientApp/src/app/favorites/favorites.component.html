@@ -1,1 +1,9 @@
-<app-favorites *ngFor="let E of resultEvent" [Event]="E" (removeFromFav)="removeFromFav($event)"></app-favorites>
+<div *ngFor="let E of resultEvent">
+  <h3>Title: {{ E.title }}</h3> <br />
+  <p>Id: {{ E.id }}</p> <br />
+  <p>Description: {{ E.description }}</p> <br />
+  <p>Category: {{ E.category }}</p> <br />
+  <p>Labels: {{ E.labels }}</p> <br />
+  <p>Location: {{ E.location }}</p> <br />
+  <button (removeFromFav)="removeFromFave($event)">Remove From Favorites</button>
+</div>
