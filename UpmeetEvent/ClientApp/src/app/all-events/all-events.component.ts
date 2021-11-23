@@ -20,13 +20,7 @@ export class AllEventsComponent {
   ngOnInit(): void {
     this.event_Service.DisplayAllEvents().subscribe((response: any) => {
       console.log(response);
-      let result: Event[] = response;
-      result.forEach((E: Event) => {
-        this.event_Service.DisplayAllEvents().subscribe((eventResponse: any) => {
-          let eResult: Event = eventResponse;
-          this.allEvents.push(eResult);
-        });
-      })
+      this.allEvents = response;      
     });
   }
 

@@ -39,7 +39,7 @@ import { AllEventsComponent } from './all-events/all-events.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
       { path: 'add', component: AddEventComponent },
-      { path: 'events', component: EventComponent },
+      { path: 'allEvents', component: AllEventsComponent },
       { path: 'favorites', component: FavoritesComponent },
 
     ])
