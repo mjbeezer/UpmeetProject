@@ -112,7 +112,7 @@ namespace UpmeetEvent.Controllers
         [HttpGet("allEvents")]
         public List<Event> DisplayAllEvents()
         {
-            //context.AddRange(events);
+            //context.allEvents.AddRange(events);
             //context.SaveChanges();
             return context.allEvents.ToList();
         }
