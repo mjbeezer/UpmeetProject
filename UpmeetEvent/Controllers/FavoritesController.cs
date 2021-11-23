@@ -45,7 +45,7 @@ namespace UpmeetEvent.Controllers
         }
 
         [HttpDelete("deleteFavorite")]
-        public Favorites DeleteFavorite(int id)
+        public Favorites deleteFavorite(int id)
         {
             //grabbed current logged in user
             string U = User.FindFirst(ClaimTypes.NameIdentifier).Value;

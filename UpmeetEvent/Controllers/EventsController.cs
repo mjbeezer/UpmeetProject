@@ -15,7 +15,7 @@ namespace UpmeetEvent.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class EventsController : ControllerBase
-    {        
+    {
         public ApplicationDbContext context;
 
         public EventsController(ApplicationDbContext _context)
@@ -127,5 +127,12 @@ namespace UpmeetEvent.Controllers
             this.context.SaveChanges();
             return newEvent;
         }
+
+        [HttpGet("allEvents/{id}")]
+        public Event getEventById(int id)
+        {
+            return context.allEvents.Find(id);
+        }
+
     }
 }

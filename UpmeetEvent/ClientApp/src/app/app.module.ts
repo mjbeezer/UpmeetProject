@@ -13,9 +13,9 @@ import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { AddEventComponent } from './add-event/add-event.component';
-import { EventComponent } from './event/event.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { AllEventsComponent } from './all-events/all-events.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { AllEventsComponent } from './all-events/all-events.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    EventComponent,
+    EventDetailsComponent,
     FavoritesComponent,
     AllEventsComponent,
     AddEventComponent
@@ -41,6 +41,7 @@ import { AllEventsComponent } from './all-events/all-events.component';
       { path: 'add', component: AddEventComponent },
       { path: 'allEvents', component: AllEventsComponent },
       { path: 'favorites', component: FavoritesComponent },
+      { path: 'allEvents/:id', component: EventDetailsComponent },
 
     ])
   ],
