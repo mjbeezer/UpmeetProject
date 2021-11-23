@@ -16,7 +16,7 @@ export class FavoritesComponent {
 
     }
 
-  resultEvent: Event[] = [];
+  resultEvent: Favorites[] = [];
 
   ngOnInit(): void {
     this.favorites_Service.GetAllFavorites().subscribe((response: any) => {
@@ -24,7 +24,7 @@ export class FavoritesComponent {
       let MyFavs: Favorites[] = response;
       MyFavs.forEach((F: Favorites) => {
         this.event_Service.getEventById(F.EventId).subscribe((eventResponse: any) => {
-          let result: Event = eventResponse;
+          let result: Favorites = eventResponse;
           this.resultEvent.push(result);
         });
       })
@@ -32,7 +32,7 @@ export class FavoritesComponent {
   }
 
   removeFromFav(id: number) {
-    let index: number = this.resultEvent.findIndex((E: Event) => E.id == id);
+    let index: number = this.resultEvent.findIndex((E: Favorites) => E.EventId == id);
     this.resultEvent.splice(index, 1);
   }
 

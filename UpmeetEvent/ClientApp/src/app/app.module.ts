@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
@@ -16,18 +14,20 @@ import { AddEventComponent } from './add-event/add-event.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { AllEventsComponent } from './all-events/all-events.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
+import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     EventDetailsComponent,
     FavoritesComponent,
     AllEventsComponent,
-    AddEventComponent
+    AddEventComponent,
+    FetchDataComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,12 +36,15 @@ import { EventDetailsComponent } from './event-details/event-details.component';
     ApiAuthorizationModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-      { path: 'add', component: AddEventComponent },
+      { path: 'add', component: AddEventComponent, canActivate: [AuthorizeGuard] },
+      { path: 'allFavorites', component: FavoritesComponent, canActivate: [AuthorizeGuard] },
+      { path: 'addFavorite', component: FavoritesComponent},
       { path: 'allEvents', component: AllEventsComponent },
-      { path: 'favorites', component: FavoritesComponent },
       { path: 'allEvents/:id', component: EventDetailsComponent },
+      { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
+      { path: 'counter', component: CounterComponent }
+
+
 
     ])
   ],

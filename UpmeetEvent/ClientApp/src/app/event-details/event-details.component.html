@@ -6,4 +6,5 @@
   <p>Labels: {{ event.labels }}</p> <br />
   <p>Start Time: {{  displayDate() }}</p> <br />
   <p>Location: {{ event.location }}</p> <br />
+  <button (AddToFavorites)="AddToFavorites($event)" [routerLink]="['/addFavorite']">Add to Favorites</button>
 </div>
