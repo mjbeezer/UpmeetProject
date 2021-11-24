@@ -26,8 +26,10 @@ export class AddEventComponent {
       labels: form.form.value.labels,
       eventDate: form.form.value.eventDate,
       location: form.form.value.location
+      
 
     }
+    console.log(newEvent.title);
     
     this.event_Service.PostEvent(newEvent).subscribe((response: any) => {
       console.log(response);

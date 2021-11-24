@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EventsService } from '../events.service';
 import { Event } from '../Event';
+import { FavoritesService } from '../favorites.service';
 
 @Component({
   selector: 'app-event-details',
@@ -11,7 +12,7 @@ import { Event } from '../Event';
 /** event-details component*/
 export class EventDetailsComponent implements OnInit {
   /** event-details ctor */
-  constructor(private route: ActivatedRoute, private event_Service: EventsService) { }
+  constructor(private route: ActivatedRoute, private event_Service: EventsService, private favorite_Service:FavoritesService) { }
 
   event: Event = {} as Event;
 
@@ -30,5 +31,12 @@ export class EventDetailsComponent implements OnInit {
     this.event_Service.getEventById(id).subscribe((response: Event) => {
       this.event = response;
     })
+
+  }
+
+  AddFavorite(): void {
+    this.favorite_Service.PostFavorites(this.event.id).subscribe((response: any) => {
+      console.log(response);
+    });
   }
 }
