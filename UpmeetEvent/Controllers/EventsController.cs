@@ -53,7 +53,7 @@ namespace UpmeetEvent.Controllers
             Category = "Sporting Event",
             Labels = "Live Sports,Football",
             //specifying the year, month, day, hour, minute, and second.
-            EventDate = new DateTime (2021, 12, 04, 15, 0 , 0),
+            EventDate = new DateTime (2021, 12, 04, 13, 0 , 0),
             Location = "Detroit, MI"
         },
         new Event()

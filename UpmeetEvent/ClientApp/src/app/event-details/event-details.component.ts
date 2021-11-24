@@ -21,8 +21,23 @@ export class EventDetailsComponent implements OnInit {
     let result = "" + this.event.eventDate.substring(0, index);
     let time = this.event.eventDate.substring(index + 1);
     //console.log(time);
-    //add some code here to remove errors showing in console
+    
     return result;
+  }
+
+  displayTime(): any {
+    let index: number = this.event.eventDate.indexOf("T");
+    let time: string = this.event.eventDate.substring(index + 1, index + 6);
+    let numberTime: number = parseFloat(time.substring(0, 2));
+    if (numberTime > 12) {
+      time = numberTime - 12 + time.substring(2) + " PM";
+    }
+    else {
+      time += " AM";
+    }
+    
+    /*console.log(this.event.eventDate);*/
+    return time;
   }
 
   ngOnInit(): void {
