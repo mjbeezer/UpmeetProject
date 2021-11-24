@@ -4,7 +4,8 @@
   <p>Description: {{ event.description }}</p> <br />
   <p>Category: {{ event.category }}</p> <br />
   <p>Labels: {{ event.labels }}</p> <br />
-  <p>Start Time: {{  displayDate() }}</p> <br />
+  <p *ngIf="event.description != null">Event Date: {{  displayDate() }}</p> <br />
+  <p *ngIf="event.description != null" >Start Time: {{  displayTime() }}</p> <br />
   <p>Location: {{ event.location }}</p> <br />
-  <button (click)="AddFavorite()" [routerLink]="['/allFavorites']" >Add to Favorites</button>
+  <button (click)="AddFavorite()" [routerLink]="['/allFavorites']">Add to Favorites</button>
 </div>
