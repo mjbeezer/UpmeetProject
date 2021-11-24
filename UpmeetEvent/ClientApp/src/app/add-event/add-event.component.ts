@@ -31,7 +31,7 @@ export class AddEventComponent {
     }
     console.log(newEvent.title);
     
-    this.event_Service.PostEvent(newEvent).subscribe((response: any) => {
+    this.event_Service.PostEvent(newEvent.title, newEvent.description, newEvent.category, newEvent.labels, newEvent.eventDate, newEvent.location).subscribe((response: any) => {
       console.log(response);
     });
   }
