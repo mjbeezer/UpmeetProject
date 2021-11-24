@@ -5,5 +5,5 @@
   <p>Category: {{ E.category }}</p> <br />
   <p>Labels: {{ E.labels }}</p> <br />
   <p>Location: {{ E.location }}</p> <br />
-  <button (removeFromFav)="removeFromFave($event)">Remove From Favorites</button>
+  <button (click)="removeFromFav(E.id)">Remove From Favorites</button>
 </div>

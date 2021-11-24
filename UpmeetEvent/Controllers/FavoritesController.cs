@@ -30,7 +30,7 @@ namespace UpmeetEvent.Controllers
             //grab current logged in user
             string U = User.FindFirst(ClaimTypes.NameIdentifier).Value;
 
-            return context.eventFavorites.ToList();
+            return context.eventFavorites.Where(notU => notU.UserId == U).ToList();
         }
 
         //endpoint to add an event
@@ -56,5 +56,16 @@ namespace UpmeetEvent.Controllers
             this.context.SaveChanges();
             return result;
         }
+        //[HttpDelete("deleteFavorite")]
+        //public Favorites deleteFavorite(int id)
+        //{
+        //    //grabbed current logged in user
+        //    string U = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+        //    Favorites result = this.context.eventFavorites.ToList().Find(E => E.EventId == id && E.UserId == U);
+        //    this.context.eventFavorites.Remove(result);
+        //    this.context.SaveChanges();
+        //    return result;
+        //}
+
     }
 }
