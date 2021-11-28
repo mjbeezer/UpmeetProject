@@ -10,7 +10,16 @@ code {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  color:ghostwhite;
+  background-color:dodgerblue;
+  border-color:darkblue;
+}
+
+.eventDisplay{
+    background-color:lightgray;
+    text-align:center;
+    border-style:solid;
+    border-width:inherit 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
