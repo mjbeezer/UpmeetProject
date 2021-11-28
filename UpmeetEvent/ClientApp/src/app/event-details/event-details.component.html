@@ -1,11 +1,10 @@
-<div>
-  <h3>Title: {{ event.title }}</h3> <br />
-  <p>Id: {{ event.id }}</p> <br />
-  <p>Description: {{ event.description }}</p> <br />
+<div class="eventDisplay">
+  <h3>{{ event.title }}</h3> <br />
+  <h6>Description: {{ event.description }}</h6> <br />
   <p>Category: {{ event.category }}</p> <br />
   <p>Labels: {{ event.labels }}</p> <br />
-  <p *ngIf="event.description != null">Event Date: {{  displayDate() }}</p> <br />
-  <p *ngIf="event.description != null" >Start Time: {{  displayTime() }}</p> <br />
-  <p>Location: {{ event.location }}</p> <br />
-  <button (click)="AddFavorite()" [routerLink]="['/allFavorites']">Add to Favorites</button>
+  <h5 *ngIf="event.description != null">Event Date: {{  displayDate() }}</h5> <br />
+  <h5 *ngIf="event.description != null" >Start Time: {{  displayTime() }}</h5> <br />
+  <h5>Location: {{ event.location }}</h5> <br />
+  <button class="btn-primary" (click)="AddFavorite()" [routerLink]="['/allFavorites']">Add to Favorites</button>
 </div>

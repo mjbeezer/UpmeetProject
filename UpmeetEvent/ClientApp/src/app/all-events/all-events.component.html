@@ -1,7 +1,5 @@
-<div *ngFor="let E of allEvents">
-  <h3>Title: {{ E.title }}</h3>
-  
-  <button [routerLink] ="['/allEvents',E.id]">See Details</button>
-  <h4></h4>
-  <br /><br />
+<div class="eventDisplay" *ngFor="let E of allEvents">
+  <h5>{{ E.title }}</h5>
+  <h6>{{ E.category }}</h6>
+  <button class="btn-primary" [routerLink]="['/allEvents',E.id]">See Details</button>
 </div>

@@ -1,9 +1,6 @@
-<div *ngFor="let E of resultEvent">
-  <h3>Title: {{ E.title }}</h3> <br />
-  <p>Id: {{ E.id }}</p> <br />
-  <p>Description: {{ E.description }}</p> <br />
-  <p>Category: {{ E.category }}</p> <br />
-  <p>Labels: {{ E.labels }}</p> <br />
-  <p>Location: {{ E.location }}</p> <br />
-  <button (click)="removeFromFav(E.id)">Remove From Favorites</button>
+<div class="eventDisplay" *ngFor="let E of resultEvent">
+  <h3>{{ E.title }}</h3> <br />
+  <h6>Category: {{ E.category }}</h6><br />
+  <h6>For more information on this event <button class="btn-primary" [routerLink]="['/allEvents',E.id]">Click Here</button></h6><br />
+  <button class="btn-primary" (click)="removeFromFav(E.id)">Remove From Favorites</button>
 </div>
