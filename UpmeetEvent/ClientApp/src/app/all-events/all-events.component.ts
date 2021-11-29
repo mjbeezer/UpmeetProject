@@ -19,6 +19,7 @@ export class AllEventsComponent {
   }
 
   allEvents: Event[] = [];
+/*  currentDateEvent: Date = new Date();*/
 
   @Input() favorite: Favorites = {} as Favorites;
   @Output() removeFromFav = new EventEmitter<number>();
@@ -27,6 +28,7 @@ export class AllEventsComponent {
     this.event_Service.DisplayAllEvents().subscribe((response: any) => {
       console.log(response);
       this.allEvents = response;
+/*      this.currentDateEvent.setDate(this.currentDateEvent.getDate()+7);*/
     });
   }
 
@@ -36,6 +38,8 @@ export class AllEventsComponent {
     });
     this.removeFromFav.emit(this.favorite.id);
   }
+
+ 
 
   //@Input() event: Event = {} as Event
   
