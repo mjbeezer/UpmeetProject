@@ -6,5 +6,5 @@
   <h5 *ngIf="event.description != null">Event Date: {{  displayDate() }}</h5> <br />
   <h5 *ngIf="event.description != null" >Start Time: {{  displayTime() }}</h5> <br />
   <h5>Location: {{ event.location }}</h5> <br />
-  <button class="btn-primary" (click)="AddFavorite()" [routerLink]="['/allFavorites']">Add to Favorites</button>
+  <button *ngIf="!isFavorited" class="btn-primary" (click)="AddFavorite()" [routerLink]="['/allFavorites']">Add to Favorites</button>
 </div>
