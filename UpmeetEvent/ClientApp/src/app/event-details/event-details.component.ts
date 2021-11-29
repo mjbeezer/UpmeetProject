@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EventsService } from '../events.service';
 import { Event } from '../Event';
@@ -15,6 +15,7 @@ export class EventDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private event_Service: EventsService, private favorite_Service:FavoritesService) { }
 
   event: Event = {} as Event;
+  isFavorited: boolean = false;
 
   displayDate(): string {
     let index: number = this.event.eventDate.indexOf("T");
@@ -46,8 +47,16 @@ export class EventDetailsComponent implements OnInit {
     this.event_Service.getEventById(id).subscribe((response: Event) => {
       this.event = response;
     })
-
-  }
+    this.favorite_Service.GetAllFavorites().subscribe((response: any) => {
+      console.log(response);
+      response.forEach(F => {
+        if (F.eventId == id) {
+          this.isFavorited = true;
+        }
+      }
+      )
+    });
+  }  
 
   AddFavorite(): void {
     this.favorite_Service.PostFavorites(this.event.id).subscribe((response: any) => {
