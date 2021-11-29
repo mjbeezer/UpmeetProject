@@ -2,6 +2,12 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  color: white;
+}
+.navbar {
+  background-image: url("https://www.michigan.photography/wp-content/uploads/2018/05/Downtown-Skyline-at-Night-Detroit-City.jpg "); background-size: cover;
+  background-position: 100% 43%;
+  padding-bottom:30%;
 }
 
 html {
@@ -16,3 +22,9 @@ html {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+
+.container {
+  background-color: rgba(102,185,255, .5);
+}
+
+

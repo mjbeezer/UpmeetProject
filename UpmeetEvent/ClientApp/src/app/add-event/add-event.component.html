@@ -2,10 +2,10 @@
   <form #addEventForm="ngForm" (ngSubmit)="AddToEvents(addEventForm)">
     <h3>Please add an event!</h3>
 
-    <label for="title">Enter Event Name.</label><br />
+    <label for="title">Enter event name:</label><br />
     <input name="title" type="text" ngModel placeholder="Red Wings vs. Bruins" required /><br />
 
-    <label for="description">Enter a brief description of the event.</label><br />
+    <label for="description">Enter a brief description of the event:</label><br />
     <input name="description" type="text" ngModel placeholder="Watch a hockey game!" required /><br />
 
     <label for="category">Is this a sporting event, concert or family show?</label><br />

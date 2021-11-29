@@ -1,5 +1,17 @@
+<!--<h6 class="center">Events Happening This Week:</h6>-->
 <div class="eventDisplay" *ngFor="let E of allEvents">
-  <h5>{{ E.title }}</h5>
-  <h6>{{ E.category }}</h6>
-  <button class="btn-primary" [routerLink]="['/allEvents',E.id]">See Details</button>
-</div>
+  <!--<div *ngIf="{{ currentDateEvent }} < {{ E.eventDate }}">-->
+    <h5>{{ E.title }}</h5>
+    <h6>{{ E.category }}</h6>
+    <button class="btn-primary" [routerLink]="['/allEvents',E.id]">See Details</button>
+  </div>
+<!--</div>-->
+<!--<h6>Upcoming Events:</h6>
+<div class="eventDisplay" *ngFor="let E of allEvents">
+  <div *ngIf="!({{ currentDateEvent }} < {{ E.eventDate }})">
+    <h5>{{ E.title }}</h5>
+    <h6>{{ E.category }}</h6>
+    <button class="btn-primary" [routerLink]="['/allEvents',E.id]">See Details</button>
+  </div>
+</div>-->
+
